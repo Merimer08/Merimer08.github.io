@@ -4,7 +4,6 @@
     --secondary-color: #007bff; /* Azul brillante */
     --background-color: #F9F9F9;
     --text-color: #333333;
-    --white-color: #FFFFFF;
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -15,46 +14,19 @@ body {
     line-height: 1.6;
 }
 
-.logo-img {
-    height: 60px;   /* ajusta la altura */
-    width: auto;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-h1 {
-    font-size: 2.8rem;
-}
-
 h2 {
-    font-size: 2rem;
     color: var(--primary-color);
-    margin-bottom: 40px;
-    text-align: center;
 }
 
+/* Efecto hover sutil para todos los botones */
 .btn:hover {
-    transform: translateY(-3px); /* Efecto de elevación sutil */
+    transform: translateY(-3px);
+    transition: transform 0.2s ease;
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-}
+/* --- Componentes Específicos --- */
 
-.btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-}
-
-/* --- Navegación --- */
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-}
-
-/* --- Selector de Idioma --- */
+/* Selector de Idioma en la Navbar */
 .lang-switcher a {
     color: #888;
     text-decoration: none;
@@ -66,155 +38,79 @@ h2 {
     color: var(--primary-color);
 }
 
-/* --- Hero Section --- */
+/* Sección Hero (Página Principal) */
 .hero {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200');
     background-size: cover;
     background-position: center;
-    color: var(--white-color);
-    text-align: center;
-    padding: 120px 0;
+    color: white;
 }
 
-.hero h1 {
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Sección Sobre Mí --- */
-.features {
-    padding: 80px 0;
-}
-
-.about-content {
-    background-color: var(--white-color);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
+/* Imagen de Perfil (Sección Sobre Mí) */
 .profile-pic {
-    border-radius: 50%;
     width: 200px;
     height: 200px;
     object-fit: cover;
 }
 
-.about-content p {
-    flex: 1;
-    text-align: left;
+/* --- Estilos para la Página de Proyectos --- */
+
+/* Botones de Filtro */
+#filter-buttons .btn {
+    margin: 5px;
+    transition: all 0.3s ease;
 }
 
-
-/* --- Sección de Proyectos --- */
-.pricing {
-    padding: 80px 0;
+/* Estilo por defecto para el botón activo (se usará para 'Todos') */
+#filter-buttons .btn.active {
+    background-color: #343a40;
+    color: white;
+    border-color: #343a40;
 }
 
+/* Colores Específicos por Tecnología */
+#filter-buttons .btn[data-filter="html"].active {
+    background-color: #198754; border-color: #198754; color: white;
+}
+#filter-buttons .btn[data-filter="css"].active {
+    background-color: #0dcaf0; border-color: #0dcaf0; color: black;
+}
+#filter-buttons .btn[data-filter="javascript"].active {
+    background-color: #ffc107; border-color: #ffc107; color: black;
+}
+#filter-buttons .btn[data-filter="react"].active {
+    background-color: #0d6efd; border-color: #0d6efd; color: white;
+}
+#filter-buttons .btn[data-filter="php"].active {
+    background-color: #6f42c1; border-color: #6f42c1; color: white;
+}
+#filter-buttons .btn[data-filter="laravel"].active {
+    background-color: #dc3545; border-color: #dc3545; color: white;
+}
+
+/* Animación para las tarjetas de proyecto al aparecer/filtrar */
 .project-card {
-    background-color: var(--white-color);
-    border-top: 5px solid var(--primary-color);
-    /* El resto es manejado por la clase .card de Bootstrap */
+    animation: fadeIn 0.5s;
 }
 
-.project-card h3 {
-    color: var(--primary-color);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
-.project-card p {
-    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
-}
-
-.technologies span {
-    /* Las clases .badge de Bootstrap ya dan estilo, pero puedes personalizar aquí */
-    font-size: 0.9rem; /* Ejemplo de personalización */
-}
-
-/* --- Footer --- */
-.footer {
-    /* Las clases de Bootstrap bg-dark y text-white ya aplican estos estilos */
-    /* Puedes dejarlo vacío o añadir personalizaciones específicas */
-}
-
-.footer h3 {
-    color: var(--white-color);
-    border: none;
-}
-
-.social-links a {
-    margin: 0 15px;
-    /* color y text-decoration son manejados por .text-white en el HTML */
-}
-
-.copyright {
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #aaa;
-}
-
 
 /* --- Diseño Responsivo Adicional --- */
 @media(max-width: 767px) {
-    h1 {
+    .hero h1 {
         font-size: 2.2rem;
     }
     .profile-pic {
         width: 150px;
         height: 150px;
     }
-}
-
-/* --- Estilos para la página de Proyectos --- */
-
-/* Botón "Ver todos" */
-.see-all-projects {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* Nuevos estilos para la tarjeta de proyecto con imagen */
-.project-card {
-    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
-}
-
-.project-image {
-    width: 100%;
-    height: 200px; /* Altura fija para todas las imágenes */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-    display: block;
-}
-
-.project-content {
-    padding: 25px; /* Añadimos el padding al contenido de texto */
-}
-
-/* Navegación simple en la página de proyectos */
-.main-nav {
-    position: relative;
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.main-nav a {
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
-.nav-logo {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 50px;
-    width: auto;
 }

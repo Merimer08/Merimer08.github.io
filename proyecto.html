@@ -12,23 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="navbar">
-        <div class="container">
-            <a href="#" class="logo" data-key="logoText">MLL.dev</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about" data-key="navAbout">Sobre mí</a></li>
-                    <li><a href="#projects" data-key="navProjects">Proyectos</a></li>
-                    <li><a href="#contact" data-key="navContact">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="lang-switcher">
-                <a href="#" class="lang-btn active" data-lang="es">ES</a>
-                <span>/</span>
-                <a href="#" class="lang-btn" data-lang="en">EN</a>
-            </div>
-        </div>
-    </header>
+<site-header></site-header>
+       
 <main>
     <div class="container">
         <nav class="main-nav">
@@ -50,8 +35,8 @@
                         <h4>Pokédex Interactiva</h4>
                         <p>Aplicación desarrollada con JS puro, con efectos visuales únicos para cada tipo, scroll infinito y buscador en tiempo real.</p>
                         <div class="project-links">
-                            <a href="https://merimer08.github.io/PokedexWeb/" target="_blank">Ver Proyecto</a>
-                            <a href="https://github.com/Merimer08/PokedexWeb" target="_blank">Ver Código</a>
+                            <a href="https://merimer08.github.io/PokedexWeb/" class="btn btn btn-primary" target ="_blank">Ver Proyecto</a>
+                            <a href="https://github.com/Merimer08/PokedexWeb" class="btn btn-primary"  target="_blank">Ver Código</a>
                         </div>
                     </div>
                 </div>
@@ -65,8 +50,8 @@
                         <h4>Nombre de tu Proyecto de React</h4>
                         <p>Describe aquí tu proyecto de React.</p>
                         <div class="project-links">
-                            <a href="https://merimer08.github.io/pokedex-react" target="_blank">Ver Proyecto</a>
-                            <a href="https://github.com/Merimer08/pokedex-react" target="_blank">Ver Código</a>
+                            <a href="https://merimer08.github.io/pokedex-react" class="btn btn btn-primary"target="_blank">Ver Proyecto</a>
+                            <a href="https://github.com/Merimer08/pokedex-react" class="btn btn btn-primary"target="_blank">Ver Código</a>
                         </div>
                     </div>
                 </div>
@@ -75,17 +60,10 @@
         </section>
     </div>
 </main>
- <footer id="contact" class="footer">
-        <div class="container">
-            <h3 data-key="contactTitle">Ponte en contacto</h3>
-            <p data-key="contactText">Puedes encontrarme en LinkedIn, ver más de mi código en GitHub o enviarme un correo.</p>
-            <div class="social-links">
-                 <a href="https://www.linkedin.com/in/tu-link" target="_blank">LinkedIn</a> |
-                 <a href="https://github.com/Merimer08" target="_blank">GitHub</a> |
-                 <a href="mailto:marialolu08@gmail.com">marialolu08@gmail.com</a>
-            </div>
-            <p class="copyright">&copy; 2025 María López Luengo</p>
-        </div>
+ <site-footer></site-footer>
+
+  <script src="js/layout.js" type="module"></script>
+  <script src="js/translations.js"></script>
     </footer>
     
 </body>

@@ -114,3 +114,32 @@ h2 {
         height: 150px;
     }
 }
+/* --- Estilos para Tarjetas Superpuestas --- */
+
+.card-stack-container {
+    position: relative; /* Establece el contexto para el posicionamiento absoluto */
+}
+
+.card-overlay {
+    position: absolute; /* Saca la tarjeta del flujo normal */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* ¡La clave está aquí! Le damos una opacidad del 60% */
+    opacity: 0.6; 
+    
+    /* Opcional: una transición suave para el efecto hover */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Efecto opcional: cuando pasas el ratón, la capa casi desaparece */
+.card-stack-container:hover .card-overlay {
+    opacity: 0.1; /* Hacemos la capa casi invisible al pasar el ratón */
+}
+.project-card .card-img-top {
+    height: 280px; /* Define una altura fija para todas las imágenes. Puedes cambiar este valor. */
+    width: 100%;   /* Asegura que la imagen ocupe todo el ancho disponible. */
+    object-fit: cover; /* Esta es la magia: recorta la imagen para que llene el espacio sin deformarse. */
+}

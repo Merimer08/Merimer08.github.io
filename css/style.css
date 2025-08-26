@@ -1,5 +1,8 @@
-/* --- Variables y Estilos Generales --- */
-:root {
+/* ==========================================================================
+   1. VARIABLES Y ESTILOS GENERALES
+   ========================================================================== */
+
+   :root {
     --primary-color: #1a237e; /* Azul oscuro profesional */
     --secondary-color: #007bff; /* Azul brillante */
     --background-color: #F9F9F9;
@@ -18,15 +21,18 @@ h2 {
     color: var(--primary-color);
 }
 
-/* Efecto hover sutil para todos los botones */
+/* Efecto hover sutil para todos los botones de Bootstrap */
 .btn:hover {
     transform: translateY(-3px);
     transition: transform 0.2s ease;
 }
 
-/* --- Componentes Específicos --- */
 
-/* Selector de Idioma en la Navbar */
+/* ==========================================================================
+   2. COMPONENTES DE LAYOUT Y SECCIONES PRINCIPALES
+   ========================================================================== */
+
+/* --- Header / Navbar --- */
 .lang-switcher a {
     color: #888;
     text-decoration: none;
@@ -38,7 +44,7 @@ h2 {
     color: var(--primary-color);
 }
 
-/* Sección Hero (Página Principal) */
+/* --- Sección Hero (Página Principal) --- */
 .hero {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1200');
     background-size: cover;
@@ -46,29 +52,31 @@ h2 {
     color: white;
 }
 
-/* Imagen de Perfil (Sección Sobre Mí) */
+/* --- Sección "Sobre Mí" --- */
 .profile-pic {
     width: 200px;
     height: 200px;
     object-fit: cover;
 }
 
-/* --- Estilos para la Página de Proyectos --- */
 
-/* Botones de Filtro */
+/* ==========================================================================
+   3. ESTILOS DE PÁGINA: GALERÍA DE PROYECTOS
+   ========================================================================== */
+
+/* --- 3.1 Botones de Filtro --- */
 #filter-buttons .btn {
     margin: 5px;
     transition: all 0.3s ease;
 }
 
-/* Estilo por defecto para el botón activo (se usará para 'Todos') */
 #filter-buttons .btn.active {
     background-color: #343a40;
     color: white;
     border-color: #343a40;
 }
 
-/* Colores Específicos por Tecnología */
+/* Colores específicos para botones de filtro activos */
 #filter-buttons .btn[data-filter="html"].active {
     background-color: #198754; border-color: #198754; color: white;
 }
@@ -88,10 +96,46 @@ h2 {
     background-color: #dc3545; border-color: #dc3545; color: white;
 }
 
-/* Animación para las tarjetas de proyecto al aparecer/filtrar */
+/* --- 3.2 Tarjetas de Proyecto --- */
 .project-card {
     animation: fadeIn 0.5s;
 }
+
+.project-card .card-img-top {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para el efecto de capa superpuesta */
+.card-stack-container {
+    position: relative;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card-stack-container:hover .card-overlay {
+    opacity: 0.1;
+}
+
+/* --- 3.3 Badges de Tecnología Personalizados --- */
+.badge-php {
+    background-color: #6f42c1;
+    color: white;
+}
+
+
+/* ==========================================================================
+   4. ANIMACIONES (KEYFRAMES)
+   ========================================================================== */
 
 @keyframes fadeIn {
     from {
@@ -104,7 +148,11 @@ h2 {
     }
 }
 
-/* --- Diseño Responsivo Adicional --- */
+
+/* ==========================================================================
+   5. DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
+
 @media(max-width: 767px) {
     .hero h1 {
         font-size: 2.2rem;
@@ -113,33 +161,4 @@ h2 {
         width: 150px;
         height: 150px;
     }
-}
-/* --- Estilos para Tarjetas Superpuestas --- */
-
-.card-stack-container {
-    position: relative; /* Establece el contexto para el posicionamiento absoluto */
-}
-
-.card-overlay {
-    position: absolute; /* Saca la tarjeta del flujo normal */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* ¡La clave está aquí! Le damos una opacidad del 60% */
-    opacity: 0.6; 
-    
-    /* Opcional: una transición suave para el efecto hover */
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Efecto opcional: cuando pasas el ratón, la capa casi desaparece */
-.card-stack-container:hover .card-overlay {
-    opacity: 0.1; /* Hacemos la capa casi invisible al pasar el ratón */
-}
-.project-card .card-img-top {
-    height: 280px; /* Define una altura fija para todas las imágenes. Puedes cambiar este valor. */
-    width: 100%;   /* Asegura que la imagen ocupe todo el ancho disponible. */
-    object-fit: cover; /* Esta es la magia: recorta la imagen para que llene el espacio sin deformarse. */
 }

@@ -65,9 +65,20 @@
                                     <span class="badge bg-primary">MySQL</span>
                                     <span class="badge bg-warning text-dark">JavaScript</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-primary" data-key="repoButton">Ver
-                                    Repositorio</a>
+                                
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#avisoCodigoModal" data-key="demoButton">Ver
+                                    Repositorio</button>
+                                <checkin-modal></checkin-modal>
+                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                        data-bs-target="#gifModal" data-gif-title="Demostración: Gestor de Gastos"
+                                        data-gif-src="img/capturas/demo-gestor-gastos.gif">
+                                        Demo 🎥
+                                    </button> <gif-modal-gestor></gif-modal-gestor><!-- SIN TERMINAR NO HECHO -->
+
+
                             </div>
+                            
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -104,7 +115,7 @@
     </script>
 
     <script src="js/layout.js" type="module"></script>
-    <script src="js/translations.js"></script>
+
 
 
 
